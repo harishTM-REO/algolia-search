@@ -6,19 +6,60 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="src/style.css">
-  <title>Movie search app</title>
+  <title>Movie Search App - Enhanced with Algolia Recommend</title>
 </head>
 
 <body>
   <div id="app">
-    <h1>Movie Search</h1>
+    <h1>🎬 Movie Search</h1>
+    
+    <!-- Custom Purchase History Section -->
+    <div id="custom-purchase-history" class="recommendations-section"></div>
+    
+    <!-- Algolia Recommend: Trending Items -->
+    <!-- <div id="trending-items" class="recommendations-section algolia-recommend"></div> -->
+    
+    <!-- Search Box -->
     <div id="searchbox"></div>
-    <div id="hits"></div>
-    <div class="movie-cast">
-      <h4 class="cast-text"> CAST</h4>
-      <div class="cast-badge"></div>
+    
+    <div class="search-container">
+      <!-- Sidebar with Filters -->
+      <aside class="sidebar">
+        <h3>Filters</h3>
+        
+        <div id="clear-refinements"></div>
+        
+        <div class="filter-section">
+          <h4>Genre</h4>
+          <div id="genre-list"></div>
+        </div>
+        
+        <div class="filter-section">
+          <h4>Rating</h4>
+          <div id="rating-range"></div>
+        </div>
+      </aside>
+      
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div id="stats"></div>
+        <div id="hits"></div>
+        <div id="pagination"></div>
+        
+        <!-- Algolia Recommend: Frequently Bought Together (shown on product page) -->
+        <div id="fbt-recommendations" class="recommendations-section algolia-recommend"></div>
+      </main>
     </div>
   </div>
+  
+  <!-- Product Details Modal -->
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-product-content"></div>
+    </div>
+  </div>
+  
   <script type="module" src="src/main.js"></script>
 </body>
 
