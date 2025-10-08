@@ -276,16 +276,27 @@ search.addWidgets([
 
   // Rating filter - Algolia's native range input
   // NOTE: You must add 'vote_average' as an attribute for faceting in Algolia dashboard
+  // rangeInput({
+  //   container: '#rating-range',
+  //   attribute: 'vote_average',
+  //   templates: {
+  //     separatorText: 'to',
+  //     submitText: 'Filter',
+  //   },
+  //   precision: 1,
+  // }),
+
+  // Rating filter
   rangeInput({
     container: '#rating-range',
     attribute: 'vote_average',
     templates: {
       separatorText: 'to',
-      submitText: 'Filter',
+      submitText: 'Go',
     },
-    precision: 1,
+    min: 0,
+    max: 10,
   }),
-
   // Hits
   hits({
     container: "#hits",
